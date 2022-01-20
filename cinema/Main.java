@@ -54,13 +54,15 @@ public class Main {
     }
 
     private static void print() {
-        for (int i = 0, j = 0; i < seats.length; i++) {
+        String[] out = new String[seats.length];
+        for (int i = 0, j = 0; i < out.length; i++) {
             if (seats[i] != null) {
-                System.out.print(seats[i] + " ");
+                out[i] = seats[i];
             } else {
-                System.out.print(combinations[j++] + " ");
+                out[i] = combinations[j++];
             }
         }
-        System.out.println();
+
+        System.out.println(String.join(" ", out));
     }
 }
